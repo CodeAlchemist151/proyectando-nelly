@@ -24,6 +24,17 @@ class Event extends Model
         'is_active'       // Estado de activación
     ];
 
+        /**
+     * Accesor para obtener la URL completa de la foto del ponente
+     * @param string $photo
+     * @return string
+     */
+    function getImageAttribute($image)
+    {
+        // This might be causing the error if 'file' route doesn't exist
+        return route('file', ['file' => $image]);
+    }
+
     /**
      * Relación: Un evento pertenece a una modalidad.
      */

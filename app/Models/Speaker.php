@@ -30,6 +30,17 @@ class Speaker extends Model
     ];
 
     /**
+     * Accesor para obtener la URL completa de la foto del ponente
+     * @param string $photo
+     * @return string
+     */
+    function getPhotoAttribute($photo)
+    {
+        // This might be causing the error if 'file' route doesn't exist
+        return route('file', ['file' => $photo]);
+    }
+
+    /**
      * Conversiones de tipos para los atributos.
      *
      * @var array

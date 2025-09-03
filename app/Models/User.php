@@ -60,6 +60,17 @@ class User extends Authenticatable
     ];
 
     /**
+     * Obtener la URL de la foto de perfil del usuario.
+     * @param string $profile_photo
+     * @return string
+     */
+    public function getFileUrlAttribute()
+    {
+        // This might be causing the error if 'file' route doesn't exist
+        return route('file', ['filename' => $this->filename]);
+    }
+
+    /**
      * Relación: Un usuario pertenece a un género.
      */
     public function gender()

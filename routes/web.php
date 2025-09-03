@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('file', [\App\Http\Controllers\FileController::class, 'getFile']);
+
 Route::get('/', function () {
     return view('welcome');
 });
