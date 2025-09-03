@@ -36,6 +36,7 @@ return new class extends Migration
             // Estudiante
             $table->string('institution_name')->nullable();  // Nombre de la institución educativa
             $table->string('academic_program')->nullable();  // Programa académico
+            $table->string('modality')->nullable();  // Programa académico
 
             // Campos específicos para Docentes
             $table->string('university')->nullable();

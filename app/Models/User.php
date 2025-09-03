@@ -9,10 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
+use App\Traits\HasUuid;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasRoles, HasUuid;
 
    protected static function boot()
      {
@@ -44,6 +45,7 @@ class User extends Authenticatable
         'document_number',
         'institution_name',
         'academic_program',
+        'modality',
         'university',
         'company_name',
         'company_position',
