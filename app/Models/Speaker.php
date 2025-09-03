@@ -37,7 +37,7 @@ class Speaker extends Model
     function getPhotoAttribute($photo)
     {
         // This might be causing the error if 'file' route doesn't exist
-        return route('file', ['file' => $photo]);
+        return route('file', ['path' => $photo]);
     }
 
     /**

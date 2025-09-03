@@ -32,7 +32,7 @@ class Event extends Model
     function getImageAttribute($image)
     {
         // This might be causing the error if 'file' route doesn't exist
-        return route('file', ['file' => $image]);
+        return route('file', ['path' => $image]);
     }
 
     /**

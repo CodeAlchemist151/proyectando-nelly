@@ -67,7 +67,7 @@ class User extends Authenticatable
     public function getFileUrlAttribute()
     {
         // This might be causing the error if 'file' route doesn't exist
-        return route('file', ['filename' => $this->filename]);
+        return route('file', ['path' => $this->filename]);
     }
 
     /**
